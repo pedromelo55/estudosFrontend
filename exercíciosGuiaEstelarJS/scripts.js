@@ -58,6 +58,7 @@ const objeto = {
 function calcularReceita (receitas, despesas){
     let sum = 0
     let sum2 = 0
+    // poderia ter colocado esses for em uma função de somatória
     for (let i = 0 ; i < receitas.length ; i++){
         sum += receitas[i]
     }
@@ -69,7 +70,7 @@ function calcularReceita (receitas, despesas){
         console.log(`Saldo negativo: ${sum - sum2}`)
     }
     else{
-        console.log(`Saldo positivo: ${sum - sum2}`)
+        console.log(`Saldo positivo: ${sum - sum2}`) // se usar uma variável para o total dá para colocar um toFixed(2)
     }
 }
 
@@ -89,12 +90,32 @@ calcularReceita(objeto.receitas, objeto.despesas)
     F = C * 9/5 + 32
 */
 
+function transformDegree(degree) {
+    const celsiusExists = degree.toUpperCase().includes("C")
+    const fahrenheitExists = degree.toUpperCase().includes("F")
+    
+    if(!celsiusExists && !fahrenheitExists){
+        throw new Error("Tipo de unidade não identificado")
+    }
 
-function temperature(string) {
-    let tempF
-    Number(string)
-    tempF = string * 9/5 + 32
-    return tempF
+    // Fluxo ideal, F -> C
+    let updatedDegree = Number(degree.toUpperCase().replace("F", ""))
+    let formula = (fahrenheit) => (fahrenheit - 32) * 5/9
+    let degreeSign = 'C'
+
+    // Fluxo alternativo, C -> F
+    if(celsiusExists){
+        updatedDegree = Number(degree.toUpperCase().replace("C", ""))
+        formula = celsius => celsius * 9/5 + 32
+        degreeSign = 'F'
+    }
+
+    return formula(updatedDegree) + degreeSign
 }
 
-console.log(temperature(24))
+try { 
+    console.log(transformDegree('10C'))
+    console.log(transformDegree('50F'))
+} catch{
+    console.log(error)
+}
