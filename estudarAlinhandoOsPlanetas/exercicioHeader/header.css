@@ -1,0 +1,8 @@
+header {
+    display: flex;
+}
+
+header:p {
+    margin-left: .8rem;
+    color: blue;
+}

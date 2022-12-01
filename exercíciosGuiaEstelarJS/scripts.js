@@ -119,3 +119,63 @@ try {
 } catch{
     console.log(error)
 }
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/*
+    Buscando e contando dados em Arrays
+
+    Baseado no Array de Livros por Categoria abaixo, faça os seguintes desafios
+        - 1. Contar o número de categorias e o número de livros em cada categoria
+        - 2. Contar o número de autores
+        - 3. Mostrar livros do autor Augusto Cury
+        - 4. Transformar a função acima em uma função que irá receber o nome do autor
+        e devolver os livros desse autor 
+
+*/
+
+const categories = [
+    {
+        category: "Riqueza",
+        books: [ 
+            {
+                title: "Antifrágil",
+                author: "Nassin"
+            },
+            {
+                title: "Pai rico, Pai pobre",
+                author: "Robert Kiyosaki"
+            },
+        ],
+    },
+    {
+        category: "Inteligência Emocional",
+        books: [
+            {
+                title: "Você é Insubstituível",
+                author: "Augusto Cury"
+            },
+            {
+                title: "Ansiedade - Como Enfrentar O Mal do Século",
+                author: "Augusto Cury"
+            },
+            {
+                title: "Os 7 hábitos das pessoas altamente eficazes",
+                author: "Stephen R. Covey"
+            }
+        ],
+    },
+
+]
+
+// 1
+function sumCategoriesAndBooks(categories) {
+    const totalCategories = categories.length
+    console.log(totalCategories) // # of categories
+    let totalBooks
+    for(let category of categories){
+        console.log("Total de livros da categoria: ", category.category + " - " +  category.books.length)
+    }
+}
+
+sumCategoriesAndBooks(categories)
