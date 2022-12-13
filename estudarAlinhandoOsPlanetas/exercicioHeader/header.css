@@ -1,8 +1,23 @@
 header {
-    display: flex;
+    padding: 4rem;
+    background-color: lightgray;
 }
 
-header:p {
-    margin-left: .8rem;
-    color: blue;
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+ul {
+    display: flex;
+    list-style: none;
+    gap: .8rem;
+    align-items: center;
+}
+
+ul li:last-child {
+    background: rgb(51, 51, 196);
+    color: white;
+    padding: .8rem;
 }

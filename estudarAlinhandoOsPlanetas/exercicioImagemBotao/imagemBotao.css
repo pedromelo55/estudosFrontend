@@ -1,0 +1,19 @@
+.container {
+    display: flex;
+    gap: .8rem;
+}
+
+button {
+    background-color: rgb(31, 136, 184);
+    color: white;
+    padding:10px;
+    border-radius: 5px;
+    display: flex;
+    gap: .7rem;
+    align-items: center;
+}
+
+img {
+    width: 2rem;
+    color: white;
+}
